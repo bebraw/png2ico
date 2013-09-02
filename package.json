@@ -2,7 +2,7 @@
   "name": "png2ico",
   "description": "",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "ioscript.js": "0.3.2",
     "imagemagick": "~0.1.3"
