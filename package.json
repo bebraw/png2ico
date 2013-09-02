@@ -1,6 +1,6 @@
 {
   "name": "png2ico",
-  "description": "",
+  "description": "Converts pngs to icos",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.2.1",
   "dependencies": {
