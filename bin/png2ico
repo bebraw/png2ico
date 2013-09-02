@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var VERSION = require('../package.json').version;
+
+var ioscript = require('ioscript.js');
+
+ioscript({
+    version: require('../package.json').version,
+    args: process.argv,
+    transform: function(input) {
+        console.log(input);
+    }
+})

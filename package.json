@@ -4,9 +4,9 @@
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.1.0",
   "dependencies": {
+    "ioscript.js": "~0.3.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/bebraw/png2ico.git"
@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/bebraw/png2ico/issues"
   },
+  "bin": "./bin/png2ico",
   "keywords": [],
   "licenses": [
     {
