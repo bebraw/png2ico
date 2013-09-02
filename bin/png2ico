@@ -1,12 +1,24 @@
 #!/usr/bin/env node
-var VERSION = require('../package.json').version;
-
+var path = require('path');
+var im = require('imagemagick');
 var ioscript = require('ioscript.js');
 
+
+// http://stackoverflow.com/questions/3185677/converting-gifs-pngs-and-jpgs-to-ico-files-using-imagemagick
 ioscript({
     version: require('../package.json').version,
     args: process.argv,
-    transform: function(input) {
-        console.log(input);
+    transform: function(input, output, file) {
+        var outPath = path.join(output, path.basename(file, path.extname(file))) + '.ico';
+
+        im.convert([input,
+            '-resize', 'x16',
+            '-gravity', 'center',
+            '-background', 'transparent',
+            '-crop', '16x16+0+0',
+            '-colors', '256',
+            '-flatten',
+            outPath
+        ])
     }
 })
