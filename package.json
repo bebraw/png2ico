@@ -4,8 +4,8 @@
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.2.1",
   "dependencies": {
-    "ioscript.js": "0.3.2",
-    "imagemagick": "~0.1.3"
+    "ioscript.js": "0.3.3",
+    "imagemagick": "0.1.3"
   },
   "devDependencies": {},
   "repository": {
