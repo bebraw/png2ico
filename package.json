@@ -17,7 +17,7 @@
     "url": "https://github.com/bebraw/png2ico/issues"
   },
   "bin": "./bin/png2ico",
-  "keywords": [],
+  "keywords": ["png", "ico"],
   "licenses": [
     {
       "type": "MIT",
