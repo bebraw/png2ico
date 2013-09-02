@@ -2,7 +2,7 @@
   "name": "png2ico",
   "description": "Converts pngs to icos",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "ioscript.js": "0.3.3",
     "imagemagick": "0.1.3"
@@ -17,7 +17,10 @@
     "url": "https://github.com/bebraw/png2ico/issues"
   },
   "bin": "./bin/png2ico",
-  "keywords": ["png", "ico"],
+  "keywords": [
+    "png",
+    "ico"
+  ],
   "licenses": [
     {
       "type": "MIT",
