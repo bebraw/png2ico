@@ -14,7 +14,11 @@ ioscript({
 
         isPng(input, function(err) {
             if(err) cb();
-            else toIco(input, outPath, cb);
+            else toIco(input, outPath, function() {
+                if(!o.silent) console.log('Wrote ' + outPath);
+
+                cb();
+            });
         });
    }
 });
