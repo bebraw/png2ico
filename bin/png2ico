@@ -10,26 +10,19 @@ ioscript({
     args: process.argv,
     limit: 10,
     transform: function(o, input, output, file, cb) {
-        var outPath = path.join(output, path.basename(file, path.extname(file))) + '.ico';
+        var ext = path.extname(input);
+        var outPath;
 
-        isPng(input, function(err) {
-            if(err) cb();
-            else toIco(input, outPath, function() {
-                if(!o.silent) console.log('Wrote ' + outPath);
+        if(ext != '.png') return cb();
 
-                cb();
-            });
+        outPath = output.split('.').slice(0, -1).join('.') + '.ico';
+        toIco(input, outPath, function() {
+            if(!o.silent) console.log('Wrote ' + outPath);
+
+            cb();
         });
    }
 });
-
-function isPng(input, cb) {
-    im.identify(input, function(err, features) {
-        if(err) cb(err);
-        if(features && features.format == 'PNG') cb();
-        else cb('Wrong format');
-    });
-}
 
 function toIco(input, output, cb) {
     im.convert([input,
