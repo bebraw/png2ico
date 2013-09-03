@@ -2,7 +2,7 @@
   "name": "png2ico",
   "description": "Converts pngs to icos",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "dependencies": {
     "ioscript.js": "0.5.0",
     "imagemagick": "0.1.3"
