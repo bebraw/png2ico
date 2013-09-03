@@ -26,9 +26,8 @@ ioscript({
 function isPng(input, cb) {
     im.identify(input, function(err, features) {
         if(err) cb(err);
-        if(features.format == 'PNG') cb();
-
-        cb('Wrong format');
+        if(features && features.format == 'PNG') cb();
+        else cb('Wrong format');
     });
 }
 
