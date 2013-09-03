@@ -8,11 +8,13 @@ var ioscript = require('ioscript.js');
 ioscript({
     version: require('../package.json').version,
     args: process.argv,
-    transform: function(input, output, file) {
+    limit: 10,
+    transform: function(o, input, output, file, cb) {
         var outPath = path.join(output, path.basename(file, path.extname(file))) + '.ico';
 
         isPng(input, function(err) {
-            if(!err) toIco(input, outPath);
+            if(err) cb();
+            else toIco(input, outPath, cb);
         });
    }
 });
@@ -26,7 +28,7 @@ function isPng(input, cb) {
     });
 }
 
-function toIco(input, output) {
+function toIco(input, output, cb) {
     im.convert([input,
         '-resize', 'x16',
         '-gravity', 'center',
@@ -35,5 +37,5 @@ function toIco(input, output) {
         '-colors', '256',
         '-flatten',
         output
-    ]);
+    ], cb);
 }
